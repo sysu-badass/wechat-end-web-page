@@ -11,4 +11,4 @@
 ![/performance/perform1](https://github.com/sysu-badass/wechat-end-web-page/blob/master/performance/perform1.gif)
 ### 3. 查看个人信息以及历史订单：
 
-![/performance/perform2]https://github.com/sysu-badass/wechat-end-web-page/blob/master/performance/perform1.gif)
+![/performance/perform2](https://github.com/sysu-badass/wechat-end-web-page/blob/master/performance/perform2.gif)
