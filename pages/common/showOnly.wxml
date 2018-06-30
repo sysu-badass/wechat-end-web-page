@@ -1,0 +1,18 @@
+<template name="showOnly">
+    <view class="order">
+      <block wx:for="{{orderItems}}" wx:key="">
+        <zan-panel with-border>
+          <zan-card
+            card-class="test-card"
+            thumb="{{item.image}}"
+            price="{{item.price}}"
+            title="{{item.name}}"
+            num="{{item.number}}"
+            desc="{{item.description}}"
+            status="已结账"
+          >
+          </zan-card>
+         </zan-panel>
+      </block>
+    </view>
+</template>
