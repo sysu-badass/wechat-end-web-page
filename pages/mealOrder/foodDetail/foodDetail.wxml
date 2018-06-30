@@ -1,0 +1,14 @@
+<view>
+  <view class='imgContainer'>
+    <image class='img' src='{{image}}'></image>
+  </view>
+  <view>
+    <view class='line1'>
+    <text class='name'>{{name}}</text>
+    <text class='price'>￥{{price}}</text>
+    </view>
+    <view class='line2'>
+      <text class='description'>{{description}}</text>    
+    </view>    
+  </view>
+</view>

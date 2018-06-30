@@ -1,0 +1,6 @@
+{
+  "usingComponents":{
+    "zan-card":"../../zanui/card/index",
+    "zan-stepper":"../../zanui/stepper/index"
+  }
+}

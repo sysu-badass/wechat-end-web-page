@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/mealOrder/mealOrder",
+    "pages/shopPocket/shopPocket",
+    "pages/userAccount/userAccount",
+    "pages/mealOrder/foodDetail/foodDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fd9c34",
+    "navigationBarTitleText": "EatOuteOrder",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#C7C7C7",
+    "selectedColor": "#fd9c34",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/mealOrder/mealOrder",
+        "iconPath": "image/icons/meal.png",
+        "selectedIconPath": "image/icons/meal-active.png",
+        "text": "菜单"
+      },
+      {
+        "pagePath": "pages/shopPocket/shopPocket",
+        "iconPath": "image/icons/shopping.png",
+        "selectedIconPath": "image/icons/shopping-active.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/userAccount/userAccount",
+        "iconPath": "image/icons/user.png",
+        "selectedIconPath": "image/icons/user-active.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

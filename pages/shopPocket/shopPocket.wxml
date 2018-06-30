@@ -1,0 +1,6 @@
+<import src = "../common/orderPage.wxml"/>
+<view class="container" disable-scroll="true">
+  <view id="orderPage">
+    <template is="orderPage" data="{{foodItems,selected,howMuch,cost,pullBar}}"/>
+  </view>
+</view>

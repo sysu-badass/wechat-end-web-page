@@ -1,0 +1,34 @@
+<template name="orderPage">
+    <view class="food foodList">
+      <block wx:for="{{foodItems}}" wx:key="">
+        <view class="">
+            <image class="img" src="{{item.image}}"></image>
+          <view class="zan-card__detail" catchtap="foodDetails" data-index="{{index}}">
+            <view class="name">{{item.name}}</view>
+            <view class="sales">{{item.description}}</view>
+            <view class="price">￥  {{item.price}}</view>
+          </view>
+          <view class="food-numb">
+            <view class="remove" 
+            bindtap="removeFromTrolley"
+            hidden="{{item.count==0}}" 
+            data-index="{{index}}">-</view>
+            <text class="text" 
+            hidden="{{item.count==0}}">{{item.count}}</text>
+            <view class="add" 
+            bindtap="addToTrolley" data-index="{{index}}">+</view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="footer {{cost!=0?'active':''}}">
+      <view class="howMuch">
+        <view class="img" style="background:{{cost!=0?'#FFD161':'#E7E7E7'}};">
+          <image src="/pages/images/trolley.png" style="width:60rpx;height:60rpx;"></image>
+        </view>
+        <view class="cost" hidden="{{cost==0}}">￥{{cost}}</view>
+        <view class="free">免配送费</view>
+      </view>
+      <view class="pay">{{cost!=0?'去结算':'10元起送'}}</view>      
+    </view>
+</template>
