@@ -1,5 +1,10 @@
 {
   "usingComponents": {
-    "zan-button": "../../zanui/btn/index"
+    "zan-card": "../../zanui/card/index",
+    "zan-panel": "../../zanui/panel/index",
+    "zan-stepper": "../../zanui/stepper/index",
+    "doc-page": "../../zanui/doc-page/index",
+    "zan-button": "../../zanui/btn/index",
+    "zan-toast": "../../zanui/toast/index"
   }
 }

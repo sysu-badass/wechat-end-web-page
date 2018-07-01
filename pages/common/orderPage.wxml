@@ -1,13 +1,20 @@
+<import src="../../zanui/toast/index.wxml" />
 <template name="orderPage">
-    <view class="food foodList">
+    <view class="food">
       <block wx:for="{{foodItems}}" wx:key="">
-        <view class="">
-            <image class="img" src="{{item.image}}"></image>
-          <view class="zan-card__detail" catchtap="foodDetails" data-index="{{index}}">
-            <view class="name">{{item.name}}</view>
-            <view class="sales">{{item.description}}</view>
-            <view class="price">￥  {{item.price}}</view>
-          </view>
+        <view class="singlePanel">
+          <zan-panel without-border catchtap="foodDetails" data-index="{{index}}">
+            <zan-card
+              card-class="test-card"
+              thumb="{{item.image}}"
+              price="{{item.price}}"
+              title="{{item.name}}"
+              num=""
+              desc="{{item.description}}"
+              status=""
+            >
+            </zan-card>
+          </zan-panel>
           <view class="food-numb">
             <view class="remove" 
             bindtap="removeFromTrolley"
@@ -17,8 +24,8 @@
             hidden="{{item.count==0}}">{{item.count}}</text>
             <view class="add" 
             bindtap="addToTrolley" data-index="{{index}}">+</view>
+            </view>
           </view>
-        </view>
       </block>
     </view>
     <view class="footer {{cost!=0?'active':''}}">
@@ -29,6 +36,6 @@
         <view class="cost" hidden="{{cost==0}}">￥{{cost}}</view>
         <view class="free">免配送费</view>
       </view>
-      <view class="pay">{{cost!=0?'去结算':'10元起送'}}</view>      
+      <view class="pay">{{cost!=0?'付款':'10元起送'}}</view>      
     </view>
 </template>

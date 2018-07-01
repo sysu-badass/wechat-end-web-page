@@ -4,3 +4,12 @@
   </view>
     <open-data type="userNickName"></open-data>
 </view>
+<view>
+<doc-page title="CAPSULE" without-padding>
+<block wx:for="{{orderList}}" wx:key="">
+  <zan-panel class="cell-panel-demo">
+    <zan-cell title="消费日期：{{item.date}}" label="总消费额：￥ {{item.total_price}}" is-link catchtap="handleTap" data-index="{{index}}"></zan-cell>
+  </zan-panel>
+</block>
+</doc-page>
+</view>

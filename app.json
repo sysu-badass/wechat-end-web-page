@@ -3,7 +3,8 @@
     "pages/mealOrder/mealOrder",
     "pages/shopPocket/shopPocket",
     "pages/userAccount/userAccount",
-    "pages/mealOrder/foodDetail/foodDetail"
+    "pages/mealOrder/foodDetail/foodDetail",
+    "pages/userAccount/orderDetail/orderDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

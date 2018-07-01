@@ -1,6 +1,8 @@
 {
   "usingComponents":{
     "zan-card":"../../zanui/card/index",
-    "zan-stepper":"../../zanui/stepper/index"
+    "zan-panel": "../../zanui/panel/index",
+    "zan-stepper":"../../zanui/stepper/index",
+    "doc-page": "../../zanui/doc-page/index"
   }
 }

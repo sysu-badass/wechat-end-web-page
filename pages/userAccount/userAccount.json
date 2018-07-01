@@ -1,3 +1,9 @@
 {
-  
+  "navigationBarTitleText": "EatOuteOrder",
+  "usingComponents": {
+    "zan-card": "../../zanui/card/index",
+    "zan-panel": "../../zanui/panel/index",
+    "zan-cell": "../../zanui/cell/index",
+    "zan-badge": "../../zanui/badge/index"
+  }
 }

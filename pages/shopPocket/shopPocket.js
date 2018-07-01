@@ -1,4 +1,5 @@
 var app = getApp();
+const Toast = require('../../zanui/toast/toast');
 Page({
   /**
    * 页面的初始数据
@@ -11,6 +12,13 @@ Page({
     howMuch: 12,
     cost: 0,
     pullBar: false
+  },
+  showIconToast() {
+    Toast({
+      type: 'success',
+      message: '付款成功',
+      selector: '#zan-toast-test'
+    });
   },
   pullBar: function () {
     this.setData({
@@ -53,7 +61,7 @@ Page({
     var index=0;
     var len = tmp.length;
     for(var i=0;i<len;i++) {
-      if (tmp[i + ""].count!=0) {
+      if (tmp[i + ""].count>0) {
         tmpOrder[index+""] = tmp[i+""];
       }
     }
@@ -79,7 +87,7 @@ Page({
     var index = 0;
     var len = tmp.length;
     for (var i = 0; i < len; i++) {
-      if (tmp[i + ""].count != 0) {
+      if (tmp[i + ""].count > 0) {
         console.log(i);
         tmpOrder[index + ""] = tmp[i + ""];
         index++;

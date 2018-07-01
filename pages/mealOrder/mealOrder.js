@@ -63,7 +63,8 @@ Page({
     for(var i=0;i<len;i++) {
       tmp[i].count=0;
     }
-    console.log(tmp);
+    console.log("mealOrder.js");
+    console.log(app.globalData.foodItems);
     this.setData({
         foodItems: tmp,
         cost: app.globalData.cost
