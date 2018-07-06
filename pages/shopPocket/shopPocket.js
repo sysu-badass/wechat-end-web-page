@@ -53,6 +53,92 @@ Page({
     })
     app.globalData.cost = this.data.cost;
   },
+  sendOrder:function() {
+    var tmp = "/user_id/restaurant_id/payment";
+    var resp = "204"
+    var tmpbody = {
+      "orders":
+      [
+        {
+          "desk_number": 2,
+          "total_price": 121,
+          "restaurant_id": 9527,
+          "user_id": "3062"
+        }
+      ],
+      "order_items":
+      [
+        {
+          "number": 2,
+          "name": "豆腐",
+          "description": "delicious",
+          "image": "/image/doufu.png",
+          "price": 12,
+        }
+      ]
+    };
+    var that = app;
+    var userid = app.globalData.user_id;
+    var rest = app.globalData.restaurant_id;
+    var Url = app.globalData.Url;
+    var wholeUrl = Url + '/' + userid + '/' + rest + '/payment';
+    var wholeBody={};
+    var food=this.data.foodItems;
+    var ordedFood={};
+    var ordedFoodList=[];
+    var cost = this.data.cost;
+    wholeBody["orders"] = JSON.stringify(
+    [
+      {
+        "desk_number": 2,
+        "total_price": cost,
+        "restaurant_id": rest,
+        "user_id": userid
+      }
+    ]);
+    for (var i = 0; i < food.length;i++) {
+      ordedFood["number"] = food[i].food_id;
+      ordedFood["name"] = food[i].name;
+      ordedFood["description"] = food[i].description;
+      ordedFood["image"]=food[i].image;
+      ordedFood["price"]=food[i].price;
+      ordedFoodList.push(JSON.stringify(ordedFood));
+    }
+    wholeBody["order_items"] = JSON.stringify(ordedFood);
+    console.log(wholeBody);
+    console.log(wholeUrl);
+    
+    wx.request({
+      url: wholeUrl,
+      body: JSON.stringify(wholeBody),
+      success:res => {
+        console.log(res.data);
+        if(res.data == 204) {
+          return true;          
+        }
+      }
+    })
+    //why?????
+    return true;
+  },
+  showIconToast() {
+    Toast.setDefaultOptions({
+      selector: '#zan-toast-test'
+    });
+    if(this.sendOrder()) {
+      Toast({
+        type: 'success',
+        message: '订单成功',
+        selector: '#zan-toast-test'
+      });
+    } else {
+      Toast({
+        type: 'fail',
+        message: '订单失败',
+        selector: '#zan-toast-test'
+      });
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -105,7 +191,16 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    app.globalData.foodItems = this.data.foodItems;
+    var tmp = app.globalData.foodItems.length;
+    var tmpOrder = this.data.foodItems;
+    var index = 0;
+    for(var i=0;i<tmp;i++) {
+      if (tmp[i + ""].count > 0) {
+        console.log(i);
+        pp.globalData.foodItems[i + ""].count = tmpOrder[index + ""].count;
+        index++;
+      }
+    }
   },
 
   /**
