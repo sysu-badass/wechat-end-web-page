@@ -44,6 +44,7 @@ Page({
         foodItems: menuContent,
       })
     }
+    app.globalData.cost = this.data.cost;
   },
   foodDetails: function (event) {
     var postfood = event.currentTarget.dataset.index;
@@ -104,7 +105,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    
+    app.globalData.foodItems = this.data.foodItems;
   },
 
   /**

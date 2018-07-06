@@ -50,8 +50,16 @@ Page({
     var rest = app.globalData.restaurant_id;
     var Url = app.globalData.Url;
     var wholeUrl = Url + '/' + userid + '/' + rest + '/orders';
+    /*
+    var selfheader;
+    selfheader = {
+      'Content-Type' : 'application/json',
+      'cookie': wx.getStorageSync("sessionid")//读取cookie
+    };
+    */
     wx.request({
       url: wholeUrl,
+      //header: selfheader,
       success: res => {
         var tmp = res.data;
         console.log(tmp["orders"]);

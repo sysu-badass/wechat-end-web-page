@@ -57,44 +57,55 @@ Page({
     })
   },
   onLoad: function (event) {
-    // 加载的使用进行网络访问，把需要的数据设置到data数据对象
-    var tmp = app.globalData.foodItems;
-    var len = tmp.length;
-    for(var i=0;i<len;i++) {
-      tmp[i].count=0;
-    }
-    console.log("mealOrder.js");
-    console.log(app.globalData.foodItems);
-    this.setData({
-        foodItems: tmp,
-        cost: app.globalData.cost
-    })
+
   },
-
-  //事件处理函数
-  /**
-   * 生命周期函数--监听页面加载
-   */
-
+  bindGetUserInfo: function (e) {
+    console.log(e.detail.userInfo)
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    var tmp = app.globalData.foodItems;
+    var len = tmp.length;
+    for (var i = 0; i < len; i++) {
+      if(tmp[i].count != 0) {
+        console.log(tmp[i].count);
+      } else {
+        tmp[i].count = 0;
+      }
+    }
+    this.setData({
+      foodItems: tmp,
+      cost: app.globalData.cost
+    })
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    var tmp = app.globalData.foodItems;
+    var len = tmp.length;
+    for (var i = 0; i < len; i++) {
+      if (tmp[i].count != 0) {
+        console.log(tmp[i].count);
+      } else {
+        tmp[i].count = 0;
+      }
+    }
+    this.setData({
+      foodItems: tmp,
+      cost: app.globalData.cost
+    })
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    
+    app.globalData.foodItems = this.data.foodItems;
   },
 
   /**

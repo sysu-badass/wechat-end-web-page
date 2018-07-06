@@ -42,8 +42,16 @@ Page({
     var Url = app.globalData.Url;
     var id=options.orderId;
     var wholeUrl = Url + '/' + userid + '/' + rest + '/orders/' + id;
+    /*
+    var selfheader;
+    selfheader = {
+      'Content-Type' : 'application/json',
+      'cookie': wx.getStorageSync("sessionid")//读取cookie
+    };
+    */
     wx.request({
       url: wholeUrl,
+      //header: selfheader,
       success: res => {
         var tmp = res.data;
         that.setData({

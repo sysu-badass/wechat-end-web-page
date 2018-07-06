@@ -6,7 +6,7 @@
           <zan-panel without-border catchtap="foodDetails" data-index="{{index}}">
             <zan-card
               card-class="test-card"
-              thumb="{{item.image}}"
+
               price="{{item.price}}"
               title="{{item.name}}"
               num=""

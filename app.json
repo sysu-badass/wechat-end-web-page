@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/mealOrder/mealOrder",
     "pages/shopPocket/shopPocket",
     "pages/userAccount/userAccount",
